@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORLD CHAOS | Centro Táctico de Geopolítica & Geoeconomía Global</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23040711' stroke='%2300f0ff' stroke-width='4'/%3E%3Cpath d='M25 50h50M50 25v50M32 32l36 36M32 68l36-36' stroke='%23ff6b00' stroke-width='2' stroke-dasharray='3 3'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23ff6b00'/%3E%3C/svg%3E">
+  
+  <!-- Tipografías y librerías externas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen flex flex-col font-sans selection:bg-cyan-500/30 selection:text-cyan-300">
+
+  <!-- ====================================================================== -->
+  <!-- BARRA SUPERIOR DE TELEMETRÍA & CONTROL DE MANDO -->
+  <!-- ====================================================================== -->
+  <header class="status-bar py-3 px-4 sm:px-8 border-b border-cyan-500/20">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      
+      <!-- Logo Principal -->
+      <div class="flex items-center gap-3">
+        <div class="relative w-10 h-10 rounded-lg bg-cyan-950/60 border border-cyan-400/50 flex items-center justify-center text-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+          <i data-lucide="shield-alert" class="w-6 h-6 animate-pulse"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="logo-glitch text-lg sm:text-xl font-extrabold tracking-widest text-white">
+              WORLD <span class="text-orange-500 glow-orange">CHAOS</span>
+            </h1>
+            <span class="logo-badge hidden sm:inline-block">V1.0 TACTICAL</span>
+          </div>
+          <p class="text-[10px] font-mono tracking-wider text-slate-400 uppercase">
+            Centro de Operaciones Geoeconómicas & Inteligencia
+          </p>
+        </div>
+      </div>
+
+      <!-- Indicadores de Estado y Acciones Rápidas -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <!-- Audio Synthesizer Toggle -->
+        <button id="btn-sound-toggle" class="btn-tactical btn-outline py-2 px-3 text-xs" title="Activar/Desactivar sintetizador de audio">
+          <i data-lucide="volume-2" id="sound-icon" class="w-4 h-4 text-orange-400"></i>
+          <span id="sound-text" class="hidden sm:inline">AUDIO: LIVE</span>
+        </button>
+
+        <!-- Botón Expediente / Récords -->
+        <button id="btn-open-profile-nav" class="btn-tactical btn-cyan py-2 px-3 sm:px-4 text-xs font-bold flex items-center gap-1.5">
+          <span>🎖️</span>
+          <span>PERFIL</span>
+        </button>
+        <button id="btn-open-records" class="btn-tactical btn-outline py-2 px-3 sm:px-4 text-xs">
+          <i data-lucide="award" class="w-4 h-4"></i>
+          <span>RÉCORDS</span>
+        </button>
+
+        <!-- Botón Instrucciones -->
+        <a href="../index.html" class="btn-tactical py-2 px-3 sm:px-4 text-xs font-bold bg-amber-500/10 hover:bg-amber-500/25 text-amber-300 border border-amber-500/40 flex items-center gap-1.5 shadow-[0_0_12px_rgba(245,158,11,0.25)] transition">
+          <i data-lucide="arrow-left-circle" class="w-4 h-4 text-amber-400"></i>
+          <span>VOLVER A LECCIONES</span>
+        </a>
+        <button id="btn-open-instructions" class="btn-tactical btn-orange py-2 px-3 sm:px-4 text-xs">
+          <i data-lucide="book-open" class="w-4 h-4"></i>
+          <span>MANUAL</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ====================================================================== -->
+  <!-- CONTENEDOR PRINCIPAL: SALA DE MANDO -->
+  <!-- ====================================================================== -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 flex flex-col gap-10 relative z-10">
+
+    <!-- HERO SECTION: GLOBO 3D INTERACTIVO + SITREP EN TIEMPO REAL -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Columna Izquierda: Introducción & Expediente del Operador -->
+      <div class="lg:col-span-6 flex flex-col gap-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-400/30 text-cyan-400 text-xs font-mono tracking-wider w-fit">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+          <span>TERMINAL DE SIMULACIÓN ESTRATÉGICA</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          EL DESTINO DEL COMERCIO MUNDIAL ESTÁ EN <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-200 to-orange-400">TUS MANOS</span>
+        </h2>
+
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Los océanos se cierran. Los cuellos de botella marítimos colapsan. Las superpotencias libran una guerra silenciosa por los microchips, el litio y las rutas transoceánicas. 
+          Pon a prueba tu instinto táctico en la plataforma interactiva de geoeconomía más desafiante.
+        </p>
+
+        <!-- Mini Tarjeta: Expediente Activo del Jugador (Clickable hacia perfil) -->
+        <div id="btn-open-profile-hero" class="hud-corner p-4 rounded-xl bg-slate-900/80 border border-cyan-500/30 flex items-center justify-between gap-4 backdrop-blur cursor-pointer hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10 transition" title="Haz clic para ver tu perfil, niveles y medallas">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-lg bg-orange-500/10 border border-orange-500/40 flex items-center justify-center text-orange-400 text-xl font-bold">
+              🎖️
+            </div>
+            <div>
+              <div class="text-[11px] font-mono text-cyan-400 uppercase tracking-wider flex items-center gap-2">
+                <span>EXPEDIENTE ACTIVO</span>
+                <span id="user-level" class="px-1.5 py-0.5 rounded bg-cyan-950 text-[10px] text-cyan-300 border border-cyan-800">NIVEL 1</span>
+              </div>
+              <div id="user-codename" class="text-base font-extrabold text-white tracking-wide">OPERADOR_DELTA</div>
+              <div id="user-rank" class="text-xs text-slate-400">Analista de Inteligencia Jr.</div>
+            </div>
+          </div>
+          <div class="text-right font-mono">
+            <div class="text-[10px] text-slate-500 uppercase">Puntuación Total</div>
+            <div id="user-score" class="text-lg font-black text-orange-400">0 PTS</div>
+          </div>
+        </div>
+
+        <!-- Botones de Acción Rápida -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a href="#modos-de-juego" class="btn-tactical btn-orange py-3.5 px-6 text-sm">
+            <i data-lucide="play" class="w-4 h-4"></i>
+            <span>DESPLEGAR MISIÓN</span>
+          </a>
+          <button id="btn-open-instructions-hero" onclick="document.getElementById('btn-open-instructions').click()" class="btn-tactical btn-outline py-3.5 px-6 text-sm">
+            <i data-lucide="terminal" class="w-4 h-4"></i>
+            <span>BRIEFING TÁCTICO</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Globo Terráqueo Holográfico 3D -->
+      <div class="lg:col-span-6 flex flex-col items-center justify-center relative">
+        <div class="w-full flex items-center justify-between text-xs font-mono text-cyan-400/80 px-4 mb-2">
+          <span class="flex items-center gap-1.5"><i data-lucide="radio" class="w-3.5 h-3.5 text-orange-400 animate-pulse"></i> ROTACIÓN 3D • HAZ CLIC EN LOS NODOS</span>
+          <span class="text-slate-500 hidden sm:inline">RADAR AIS: ACTIVO</span>
+        </div>
+
+        <!-- Contenedor del Globo -->
+        <div class="globe-viewport">
+          <canvas id="globe-canvas"></canvas>
+
+          <!-- SITREP Flotante al Clicar un Chokepoint -->
+          <div id="globe-sitrep" class="hidden">
+            <div class="flex items-start justify-between gap-3 mb-2 border-b border-orange-500/30 pb-1.5">
+              <div>
+                <span class="text-[10px] font-mono text-orange-400 uppercase tracking-wider">PUNTO ESTRATÉGICO</span>
+                <h4 id="sitrep-name" class="text-sm font-bold text-white tracking-wide">CANAL DE SUEZ</h4>
+              </div>
+              <button id="btn-close-sitrep" class="text-slate-400 hover:text-white text-xs p-1">✕</button>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+              <div>
+                <span class="text-[10px] text-slate-400">ESTADO:</span>
+                <div id="sitrep-status" class="text-cyan-300 font-bold">Alerta Alta</div>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-400">ÍNDICE DE RIESGO:</span>
+                <div id="sitrep-risk" class="text-orange-400 font-bold">88%</div>
+              </div>
+              <div class="col-span-2 mt-1 pt-1 border-t border-slate-800">
+                <span class="text-[10px] text-slate-400">VOLUMEN AFECTADO:</span>
+                <div id="sitrep-flow" class="text-slate-200">12% Comercio Global</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================== -->
+    <!-- TELEMETRÍA MUNDIAL (SIMULACIÓN / DEMO) -->
+    <!-- ====================================================================== -->
+    <section class="mt-4">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-orange-500 animate-ping"></div>
+          <h3 class="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">
+            Telemetría de Red Logística Mundial
+          </h3>
+        </div>
+        <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/30 text-orange-400">
+          ⚠️ SIMULACIÓN EN VIVO • DATOS DE DEMOSTRACIÓN
+        </span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        
+        <!-- Indicador 1: Tensión Marítima -->
+        <div class="stat-box">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono mb-1">
+            <span>TENSIÓN MARÍTIMA</span>
+            <i data-lucide="activity" class="w-4 h-4 text-orange-400"></i>
+          </div>
+          <div id="stat-tension" class="text-xl sm:text-2xl font-black text-orange-400 font-mono">78.4%</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Índice compuesto de fricción</div>
+        </div>
+
+        <!-- Indicador 2: Coste Medio de Flete -->
+        <div class="stat-box">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono mb-1">
+            <span>FLETE MEDIO / TEU</span>
+            <i data-lucide="trending-up" class="w-4 h-4 text-cyan-400"></i>
+          </div>
+          <div id="stat-freight" class="text-xl sm:text-2xl font-black text-cyan-300 font-mono">$4.280 / TEU</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Rutas transoceánicas spot</div>
+        </div>
+
+        <!-- Indicador 3: Buques en Tránsito Activo -->
+        <div class="stat-box">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono mb-1">
+            <span>BUQUES AIS RASTREADOS</span>
+            <i data-lucide="ship" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+          <div id="stat-vessels" class="text-xl sm:text-2xl font-black text-emerald-300 font-mono">14.820 BUQUES</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Cargueros, petroleros y GNL</div>
+        </div>
+
+        <!-- Indicador 4: Estado Chokepoints -->
+        <div class="stat-box">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono mb-1">
+            <span>ESTADO CHOKEPOINTS</span>
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400"></i>
+          </div>
+          <div id="stat-chokepoints-status" class="text-xl sm:text-2xl font-black text-amber-400 font-mono text-sm sm:text-base">3 EN ALERTA / FLUIDO</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Suez, Ormuz y Panamá bajo foco</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================== -->
+    <!-- MODOS DE JUEGO PRINCIPALES -->
+    <!-- ====================================================================== -->
+    <section id="modos-de-juego" class="mt-8">
+
+    <!-- SECCIÓN DESTACADA: DESAFÍO DIARIO GLOBAL -->
+    <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-orange-500/40 bg-gradient-to-r from-orange-950/30 via-slate-900/80 to-slate-950 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_0_30px_rgba(255,107,0,0.15)] mb-8">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-xl bg-orange-500/20 border border-orange-500/50 flex items-center justify-center text-2xl shrink-0 text-orange-400">
+          📅
+        </div>
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <span id="daily-home-status-badge" class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded border border-orange-500/40 text-orange-400 bg-orange-950/40 animate-pulse">
+              DISPONIBLE HOY
+            </span>
+            <span class="text-xs font-mono text-slate-400">MISIÓN CALIBRADA DE 5 PREGUNTAS</span>
+          </div>
+          <h3 class="text-xl font-black text-white tracking-tight">
+            Desafío Geopolítico Diario
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mt-1 max-w-xl">
+            Un conjunto exclusivo de 5 preguntas seleccionado determinísticamente cada medianoche. Consigue bonificación de XP y mantén viva tu racha de días.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full md:w-auto">
+        <div class="flex items-center gap-3 text-center w-full sm:w-auto justify-center">
+          <div class="glass-panel px-3 py-2 rounded-xl border border-slate-800 min-w-[100px]">
+            <div class="text-[9px] font-mono text-slate-400 uppercase">REINICIO EN</div>
+            <div id="daily-home-countdown" class="text-xs font-mono font-bold text-cyan-400 mt-0.5">--:--:--</div>
+          </div>
+          <div class="glass-panel px-3 py-2 rounded-xl border border-slate-800 min-w-[90px]">
+            <div class="text-[9px] font-mono text-slate-400 uppercase">RACHA DIARIA</div>
+            <div id="daily-home-streak-count" class="text-xs font-mono font-bold text-orange-400 mt-0.5">0 DÍAS</div>
+          </div>
+        </div>
+
+        <button id="btn-launch-daily" class="btn-tactical btn-orange py-3.5 px-6 text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/25">
+          <span>⚡</span>
+          <span>JUGAR DESAFÍO DIARIO</span>
+        </button>
+      </div>
+    </div>
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-mono font-bold text-cyan-400 tracking-widest uppercase">DESPLIEGUE TÁCTICO</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1">SELECCIONA TU MODO DE JUEGO</h2>
+        <p class="text-sm text-slate-400 mt-2">
+          Tres teatros de operaciones diseñados para desafiar tus conocimientos, reflejos y visión geoestratégica.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- MODO 1: GEOQUIZ -->
+        <div class="mode-card hud-corner">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono font-bold px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
+                MODO 01 • CONOCIMIENTO
+              </span>
+              <span class="text-xs font-mono text-slate-500">60 SEGUNDOS</span>
+            </div>
+
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-cyan-400 mb-4 text-2xl shadow-[0_0_20px_rgba(0,240,255,0.2)]">
+              ⚡
+            </div>
+
+            <h3 class="text-2xl font-black text-white mb-2 tracking-tight">GEOQUIZ</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              Rondas ultrarrápidas de preguntas sobre cuellos de botella marítimos, aranceles, minerales raros y alianzas geopolíticas. Acumula rachas para disparar tu multiplicador de puntuación.
+            </p>
+
+            <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800 text-[11px] font-mono text-slate-400 space-y-1 mb-6">
+              <div class="flex justify-between"><span>DIFICULTAD:</span> <span class="text-cyan-400 font-bold">3 NIVELES</span></div>
+              <div class="flex justify-between"><span>BANCO OFICIAL:</span> <span class="text-white">60 PREGUNTAS</span></div>
+            </div>
+          </div>
+
+          <button data-mode="geoquiz" class="btn-launch-mode btn-tactical btn-cyan w-full py-3.5">
+            <i data-lucide="crosshair" class="w-4 h-4"></i>
+            <span>INICIAR GEOQUIZ</span>
+          </button>
+        </div>
+
+        <!-- MODO 2: GEOBATTLE -->
+        <div class="mode-card card-orange hud-corner">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono font-bold px-2.5 py-1 rounded bg-orange-950 text-orange-400 border border-orange-800">
+                MODO 02 • ESTRATEGIA
+              </span>
+              <span class="text-xs font-mono text-slate-500">DUELO POR TURNOS</span>
+            </div>
+
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/40 flex items-center justify-center text-orange-400 mb-4 text-2xl shadow-[0_0_20px_rgba(255,107,0,0.25)]">
+              ⚔️
+            </div>
+
+            <h3 class="text-2xl font-black text-white mb-2 tracking-tight">GEOBATTLE</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              Enfrenta dos potencias mundiales cara a cara en 9 categorías tácticas (PIB, comercio, energía, manufacturas, logística y recursos). Descubre qué país domina cada teatro geoeconómico.
+            </p>
+
+            <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800 text-[11px] font-mono text-slate-400 space-y-1 mb-6">
+              <div class="flex justify-between"><span>POTENCIAS:</span> <span class="text-orange-400 font-bold">15 PAÍSES</span></div>
+              <div class="flex justify-between"><span>DATOS:</span> <span class="text-white">FMI, BM, OMC 2023/24</span></div>
+            </div>
+          </div>
+
+          <button data-mode="geobattle" class="btn-launch-mode btn-tactical btn-orange w-full py-3.5">
+            <i data-lucide="swords" class="w-4 h-4"></i>
+            <span>ENTRAR EN COMBATE</span>
+          </button>
+        </div>
+
+        <!-- MODO 3: WORLD CRISIS -->
+        <div class="mode-card hud-corner">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-mono font-bold px-2.5 py-1 rounded bg-red-950/80 text-red-400 border border-red-800">
+                MODO 03 • SUPERVIVENCIA
+              </span>
+              <span class="text-xs font-mono text-slate-500">SIMULACIÓN PURA</span>
+            </div>
+
+            <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/40 flex items-center justify-center text-red-400 mb-4 text-2xl shadow-[0_0_20px_rgba(239,68,68,0.25)]">
+              🔥
+            </div>
+
+            <h3 class="text-2xl font-black text-white mb-2 tracking-tight">WORLD CRISIS</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              El colapso simultáneo ha comenzado: ataques en Bab el-Mandeb, bloqueo naval en el Estrecho de Malaca y corte de cables en el Báltico. Toma decisiones extremas para evitar la quiebra global.
+            </p>
+
+            <div class="p-3 rounded-lg bg-slate-950/60 border border-slate-800 text-[11px] font-mono text-slate-400 space-y-1 mb-6">
+              <div class="flex justify-between"><span>DIFICULTAD:</span> <span class="text-red-400 font-bold">EXTREMA</span></div>
+              <div class="flex justify-between"><span>OBJETIVO:</span> <span class="text-white">EVITAR APAGÓN LOGÍSTICO</span></div>
+            </div>
+          </div>
+
+          <button data-mode="crisis" class="btn-launch-mode btn-tactical btn-cyan w-full py-3.5 border-red-500/50 text-red-400 hover:bg-red-600 hover:text-white">
+            <i data-lucide="alert-octagon" class="w-4 h-4"></i>
+            <span>GESTIONAR CRISIS</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================== -->
+  <!-- MODO 01: PANTALLA PRINCIPAL GEOQUIZ -->
+  <!-- ====================================================================== -->
+  <section id="geoquiz-screen" class="hidden flex-1 max-w-4xl w-full mx-auto px-4 sm:px-8 py-8 flex flex-col gap-6 relative z-10">
+    
+    <!-- ÁREA DE JUEGO ACTIVO -->
+    <div id="quiz-gameplay-area" class="flex flex-col gap-6">
+      
+      <!-- HUD Barra Superior de Estado de la Partida -->
+      <div class="p-4 rounded-xl bg-slate-900/90 border border-cyan-500/30 backdrop-blur shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+          <div class="flex items-center gap-2">
+            <span id="quiz-diff-badge" class="text-[10px] font-mono font-bold px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
+              FÁCIL
+            </span>
+            <span id="quiz-q-counter" class="text-xs font-mono font-bold text-white tracking-wide">
+              PREGUNTA 1 DE 10
+            </span>
+          </div>
+
+          <!-- Tácticas: Puntos, Racha y Temporizador -->
+          <div class="flex items-center gap-4 text-xs font-mono">
+            <div class="flex items-center gap-1.5 text-slate-400">
+              <span>PUNTOS:</span>
+              <span id="quiz-score-val" class="font-bold text-orange-400">0 PTS</span>
+            </div>
+            <div class="flex items-center gap-1.5 text-slate-400">
+              <span>RACHA:</span>
+              <span id="quiz-streak-val" class="font-bold text-cyan-400">0x</span>
+            </div>
+            <div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-950 border border-slate-800">
+              <span>⏱️</span>
+              <span id="quiz-timer-val" class="font-bold text-cyan-400">20s</span>
+            </div>
+            <button id="quiz-btn-quit-match" class="text-slate-500 hover:text-red-400 transition" title="Abortar misión">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Progreso de 10 Preguntas -->
+        <div class="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+          <div id="quiz-progress-bar" class="h-full bg-gradient-to-r from-cyan-400 to-orange-400 transition-all duration-300 w-0"></div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Principal de Pregunta -->
+      <div class="hud-corner p-6 sm:p-8 rounded-2xl bg-[#090e1a]/95 border border-cyan-500/40 shadow-[0_0_35px_rgba(0,240,255,0.1)]">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[11px] font-mono font-bold tracking-wider mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          <span id="quiz-category-badge">TRANSPORTE MARÍTIMO</span>
+        </div>
+
+        <h3 id="quiz-question-text" class="text-xl sm:text-2xl font-black text-white leading-snug tracking-tight mb-8">
+          Cargando pregunta táctica...
+        </h3>
+
+        <!-- Opciones A, B, C, D -->
+        <div id="quiz-options-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <!-- Renderizado dinámico vía JavaScript -->
+        </div>
+
+        <!-- Tarjeta de Explicación Didáctica Inmediata -->
+        <div id="quiz-explanation-card" class="hidden mt-6 p-5 rounded-2xl border bg-slate-900/95 shadow-xl transition-all">
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <h4 id="quiz-explanation-title" class="text-sm font-mono font-bold"></h4>
+            <button id="quiz-btn-next" class="btn-tactical btn-cyan py-2 px-4 text-xs font-mono">
+              <span>SIGUIENTE PREGUNTA</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+            </button>
+          </div>
+          <p id="quiz-explanation-text" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PANTALLA FINAL: RESUMEN DE MISIÓN / DEBRIEFING -->
+    <div id="quiz-results-card" class="hidden hud-corner p-6 sm:p-10 rounded-2xl bg-[#090e1a]/95 border border-cyan-500/50 shadow-[0_0_50px_rgba(0,240,255,0.2)] text-center flex flex-col items-center">
+      
+      <div id="quiz-new-high-badge" class="hidden inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/20 border border-orange-500/50 text-orange-400 font-mono text-xs font-extrabold tracking-wider animate-bounce mb-4">
+        🏆 ¡NUEVO RÉCORD PERSONAL REGISTRADO!
+      </div>
+
+      <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest mb-1">
+        EVALUACIÓN DE INTELIGENCIA • MISIÓN FINALIZADA
+      </div>
+
+      <h3 class="text-3xl sm:text-4xl font-black text-white mb-6">DEBRIEFING OPERATIVO</h3>
+
+      <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 w-full max-w-lg mb-6 flex flex-col items-center gap-3">
+        <div class="text-xs font-mono text-slate-400">PUNTUACIÓN OBTENIDA</div>
+        <div id="quiz-final-score" class="text-4xl sm:text-5xl font-black text-orange-400 font-mono glow-orange">
+          0 PTS
+        </div>
+        <div id="quiz-final-correct" class="text-sm font-semibold text-slate-300">
+          0 / 10 Aciertos
+        </div>
+        <div class="w-full border-t border-slate-800 pt-3 mt-1">
+          <div class="text-[10px] font-mono text-slate-400 mb-1">CALIFICACIÓN ESTRATÉGICA ASIGNADA:</div>
+          <div id="quiz-final-rank" class="text-lg font-black text-cyan-400 font-mono">
+            ANALISTA DE CAMPO
+          </div>
+        </div>
+      </div>
+
+      <div id="quiz-record-compare" class="text-xs font-mono text-slate-400 mb-8">
+        Récord Personal Actual: 0 PTS
+      </div>
+
+      <!-- Botones de Acción Post-Partida -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button id="quiz-btn-play-again" class="btn-tactical btn-orange py-3.5 px-6 text-sm">
+          <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+          <span>JUGAR OTRA PARTIDA</span>
+        </button>
+        <button id="quiz-btn-change-diff" class="btn-tactical btn-cyan py-3.5 px-6 text-sm">
+          <i data-lucide="sliders" class="w-4 h-4"></i>
+          <span>CAMBIAR DIFICULTAD</span>
+        </button>
+        <button id="quiz-btn-exit" class="btn-tactical btn-outline py-3.5 px-6 text-sm">
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+          <span>SALA DE MANDO</span>
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ====================================================================== -->
+  <!-- MODO 02: PANTALLA PRINCIPAL GEOBATTLE -->
+  <!-- ====================================================================== -->
+  <section id="geobattle-screen" class="hidden flex-1 max-w-5xl w-full mx-auto px-4 sm:px-8 py-8 flex flex-col gap-6 relative z-10">
+
+    <!-- 1. PANTALLA DE SELECCIÓN DE CONTENDIENTES -->
+    <div id="battle-select-screen" class="flex flex-col gap-6">
+      
+      <div class="flex items-center justify-between border-b border-orange-500/30 pb-4">
+        <div>
+          <span class="text-xs font-mono font-bold text-orange-400 tracking-widest uppercase">MODO 02 • COMBATE ESTRATÉGICO</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">GEOBATTLE: DUELO DE POTENCIAS</h2>
+        </div>
+        <button id="battle-btn-exit" class="btn-tactical btn-outline text-xs py-2 px-3">
+          ✕ SALIR
+        </button>
+      </div>
+
+      <!-- VS Header: Slots A y B -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+        <!-- Slot A -->
+        <div id="battle-slot-a" class="md:col-span-5 p-4 rounded-xl border border-cyan-500/40 bg-slate-900/80">
+          <div class="text-xs text-slate-400 font-mono">Selecciona Contendiente Alfa...</div>
+        </div>
+
+        <!-- VS Badge Central -->
+        <div class="md:col-span-2 flex flex-col items-center justify-center gap-2">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-orange-500 flex items-center justify-center text-slate-950 font-black text-lg shadow-[0_0_20px_rgba(255,107,0,0.4)]">
+            VS
+          </div>
+          <button id="battle-btn-random" class="text-[11px] font-mono text-cyan-400 hover:text-white underline">
+            Aleatorio 🎲
+          </button>
+        </div>
+
+        <!-- Slot B -->
+        <div id="battle-slot-b" class="md:col-span-5 p-4 rounded-xl border border-orange-500/40 bg-slate-900/80">
+          <div class="text-xs text-slate-400 font-mono">Selecciona Contendiente Beta...</div>
+        </div>
+      </div>
+
+      <!-- Botón Iniciar Combate -->
+      <div class="flex justify-center pt-2">
+        <button id="battle-btn-start" class="btn-tactical btn-orange py-4 px-10 text-base shadow-[0_0_30px_rgba(255,107,0,0.4)]">
+          <i data-lucide="swords" class="w-5 h-5"></i>
+          <span>INICIAR COMBATE TÁCTICO</span>
+        </button>
+      </div>
+
+      <!-- Parrilla de 15 Países Disponibles -->
+      <div>
+        <div class="flex items-center justify-between mb-3 text-xs font-mono text-slate-400">
+          <span>ROSTER OFICIAL (15 POTENCIAS GLOBALES):</span>
+          <span>HAZ CLIC PARA ASIGNAR CONTENDIENTES</span>
+        </div>
+        <div id="battle-fighters-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          <!-- Renderizado dinámico vía JavaScript -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2. ARENA DE COMBATE (9 RONDAS CLASH) -->
+    <div id="battle-arena-screen" class="hidden flex flex-col gap-6">
+      
+      <!-- Marcador Principal Superior -->
+      <div class="p-4 sm:p-6 rounded-2xl bg-[#090e1a]/95 border border-cyan-500/40 shadow-xl flex items-center justify-between gap-4">
+        <div id="arena-card-a" class="flex items-center gap-3"></div>
+
+        <div class="flex items-center gap-3 sm:gap-6 font-mono font-black text-2xl sm:text-4xl">
+          <span id="arena-score-a" class="text-cyan-400 glow-cyan">0</span>
+          <span class="text-slate-600 text-lg sm:text-xl font-normal">:</span>
+          <span id="arena-score-b" class="text-orange-400 glow-orange">0</span>
+        </div>
+
+        <div id="arena-card-b" class="flex items-center gap-3 justify-end"></div>
+      </div>
+
+      <!-- Contenedor de las 9 Rondas -->
+      <div id="arena-rounds-container" class="space-y-3">
+        <!-- Renderizado dinámico de las 9 rondas -->
+      </div>
+
+      <!-- Acciones de Arena -->
+      <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+        <button id="arena-btn-exit" class="btn-tactical btn-outline text-xs py-2.5 px-4">
+          ← VOLVER A SELECCIÓN
+        </button>
+        <button id="arena-btn-resolve-all" class="btn-tactical btn-orange py-3 px-8 text-sm">
+          <span>VER DICTAMEN DE VICTORIA</span>
+          <i data-lucide="award" class="w-4 h-4 ml-1"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- 3. PANTALLA DE VICTORIA & DEBRIEFING -->
+    <div id="battle-victory-screen" class="hidden hud-corner p-6 sm:p-10 rounded-2xl bg-[#090e1a]/95 border border-orange-500/50 shadow-[0_0_50px_rgba(255,107,0,0.25)] text-center flex flex-col items-center">
+      
+      <div class="text-xs font-mono text-orange-400 uppercase tracking-widest mb-1">
+        RESULTADO DEL DUELO GEOECONÓMICO
+      </div>
+
+      <h3 id="victory-winner-text" class="text-3xl sm:text-4xl font-black text-white mb-2">
+        VICTORIA
+      </h3>
+
+      <div id="victory-score" class="text-xl sm:text-2xl font-black text-slate-300 font-mono mb-6">
+        0 - 0
+      </div>
+
+      <!-- Análisis Táctico -->
+      <div id="victory-tactical-analysis" class="w-full max-w-2xl mb-6 text-left">
+      </div>
+
+      <!-- Tabla Detallada con Fuentes Oficiales -->
+      <div class="w-full max-w-3xl overflow-x-auto my-4 rounded-xl border border-slate-800 bg-slate-950/70">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 text-[11px] font-mono text-slate-400 uppercase">
+              <th class="p-3">Categoría</th>
+              <th class="p-3 text-cyan-400">Contendiente Alfa</th>
+              <th class="p-3 text-orange-400">Contendiente Beta</th>
+              <th class="p-3 hidden sm:table-cell">Fuente Oficial & Año</th>
+            </tr>
+          </thead>
+          <tbody id="victory-breakdown-body">
+            <!-- Filas dinámicas -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Acciones de Revancha -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-6">
+        <button id="victory-btn-rematch" class="btn-tactical btn-orange py-3.5 px-6 text-sm">
+          <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+          <span>REPETIR ENFRENTAMIENTO</span>
+        </button>
+        <button id="victory-btn-new-fighters" class="btn-tactical btn-cyan py-3.5 px-6 text-sm">
+          <i data-lucide="users" class="w-4 h-4"></i>
+          <span>NUEVOS CONTENDIENTES</span>
+        </button>
+        <button id="victory-btn-exit" class="btn-tactical btn-outline py-3.5 px-6 text-sm">
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+          <span>SALA DE MANDO</span>
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ====================================================================== -->
+  <!-- MODO 3: WORLD CRISIS (SIMULADOR DE CRISIS GEOPOLÍTICAS Y LOGÍSTICAS) -->
+  <!-- ====================================================================== -->
+  <section id="crisis-screen" class="hidden flex-1 max-w-6xl w-full mx-auto px-4 sm:px-8 py-8 flex flex-col gap-6 relative z-10">
+    
+    <!-- Barra Superior de Navegación del Modo Crisis -->
+    <div class="flex items-center justify-between gap-4 border-b border-slate-800 pb-4">
+      <div class="flex items-center gap-3">
+        <button id="btn-back-home-from-crisis" class="btn-tactical btn-cyan py-2 px-3 text-xs flex items-center gap-2">
+          <span>←</span>
+          <span>SALA DE MANDO</span>
+        </button>
+        <div>
+          <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+            <span class="text-red-500">⚡</span>
+            <span>WORLD CRISIS</span>
+          </h2>
+          <div class="text-[11px] font-mono text-slate-400">GABINETE DE CRISIS GEOPOLÍTICA & LOGÍSTICA GLOBAL</div>
+        </div>
+      </div>
+      <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded bg-red-950/40 border border-red-500/30 text-red-400 font-mono text-xs">
+        <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+        <span>SISTEMA DE SIMULACIÓN DIDÁCTICA</span>
+      </div>
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- VISTA 1: SELECTOR DE ESCENARIOS Y ESTADÍSTICAS -->
+    <!-- ==================================================================== -->
+    <div id="crisis-selector-view" class="flex flex-col gap-6">
+      
+      <!-- Banner de Expediente y Crisis Aletoria -->
+      <div class="glass-panel p-6 rounded-2xl border border-red-500/30 bg-gradient-to-r from-red-950/20 via-slate-900/60 to-slate-950/80 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex-1">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold uppercase tracking-wider mb-2">
+            <span>SITUACIÓN ESTRATÉGICA ACTIVA</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight mb-2">
+            Intervención en Cuellos de Botella & Shocks Geoeconómicos
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
+            Toma el mando del gabinete de crisis internacional. Cada escenario simula rupturas reales o hipotéticas en rutas marítimas, cadenas de silicio, petróleo y materias primas críticas. Evalúa tres doctrinas y equilibra comercio, energía, inflación y logística.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full sm:w-auto">
+          <!-- Mini contadores de récord -->
+          <div class="grid grid-cols-2 gap-3 w-full sm:w-auto">
+            <div class="glass-panel px-4 py-2.5 rounded-xl border border-slate-800 text-center">
+              <div class="text-[10px] font-mono text-slate-400">CRISIS RESUELTAS</div>
+              <div id="crisis-stat-averted" class="text-lg font-black text-cyan-400 font-mono">0</div>
+            </div>
+            <div class="glass-panel px-4 py-2.5 rounded-xl border border-slate-800 text-center">
+              <div class="text-[10px] font-mono text-slate-400">MÁX. ESTABILIDAD</div>
+              <div id="crisis-stat-max-stability" class="text-lg font-black text-emerald-400 font-mono">0%</div>
+            </div>
+          </div>
+
+          <button id="btn-random-crisis" class="btn-tactical btn-orange py-3.5 px-6 text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-orange-500/20">
+            <span>🚨</span>
+            <span>CRISIS ALEATORIA DE EMERGENCIA</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Escenarios -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <h4 class="text-sm font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+            <span class="w-2 h-2 bg-red-400 rounded-full"></span>
+            <span>EXPEDIENTES ACTIVOS DE CRISIS (18 ESCENARIOS DISPONIBLES)</span>
+          </h4>
+          <span class="text-xs font-mono text-slate-500">Haz clic en un escenario para intervenir</span>
+        </div>
+
+        <div id="crisis-scenarios-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Inyectado dinámicamente por worldcrisis.js -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- VISTA 2: SALA DE OPERACIONES DE CRISIS ACTIVA (BRIEFING & DECISIONES) -->
+    <!-- ==================================================================== -->
+    <div id="crisis-active-view" class="hidden flex flex-col gap-6">
+      
+      <!-- Cabecera de Alerta Roja -->
+      <div class="hud-corner p-6 rounded-2xl bg-[#090e1a]/90 border border-red-500/50 shadow-[0_0_40px_rgba(239,68,68,0.2)]">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800/80">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <span id="crisis-alert-badge" class="text-xs font-mono font-bold px-3 py-1 rounded border animate-pulse border-red-500/60 text-red-400 bg-red-950/40">
+              DEFCON 1 • ALERTA ROJA
+            </span>
+            <span id="crisis-theater-tag" class="text-[11px] font-mono text-cyan-400 uppercase tracking-wider">
+              ORIENTE MEDIO / ÁFRICA
+            </span>
+          </div>
+          <button id="btn-exit-crisis" class="text-xs font-mono text-slate-400 hover:text-white transition flex items-center gap-1.5 self-end sm:self-auto">
+            <span>✕</span>
+            <span>ABANDONAR INCIDENTE</span>
+          </button>
+        </div>
+
+        <h3 id="crisis-title-active" class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">
+          Título de la Crisis Activa
+        </h3>
+        <div id="crisis-region-active" class="text-xs font-mono text-orange-400 mb-4">
+          Región Geográfica Focal
+        </div>
+
+        <!-- Indicadores Macro en Tiempo Real (HUD) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-3 border-t border-slate-800/60">
+          
+          <!-- Variable 1: Comercio -->
+          <div class="glass-panel p-3 rounded-xl border border-slate-800 bg-slate-950/60">
+            <div class="flex items-center justify-between text-xs mb-1.5">
+              <span class="text-slate-400 font-mono text-[11px]">COMERCIO GLOBAL</span>
+              <span id="crisis-val-comercio" class="font-mono text-sm font-black text-cyan-400">50%</span>
+            </div>
+            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+              <div id="crisis-bar-comercio" class="h-full bg-cyan-400 rounded-full transition-all duration-500" style="width: 50%"></div>
+            </div>
+          </div>
+
+          <!-- Variable 2: Energía -->
+          <div class="glass-panel p-3 rounded-xl border border-slate-800 bg-slate-950/60">
+            <div class="flex items-center justify-between text-xs mb-1.5">
+              <span class="text-slate-400 font-mono text-[11px]">ENERGÍA Y CRUDO</span>
+              <span id="crisis-val-energia" class="font-mono text-sm font-black text-amber-400">50%</span>
+            </div>
+            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+              <div id="crisis-bar-energia" class="h-full bg-amber-400 rounded-full transition-all duration-500" style="width: 50%"></div>
+            </div>
+          </div>
+
+          <!-- Variable 3: Inflación -->
+          <div class="glass-panel p-3 rounded-xl border border-slate-800 bg-slate-950/60">
+            <div class="flex items-center justify-between text-xs mb-1.5">
+              <span class="text-slate-400 font-mono text-[11px]">PRESIÓN INFLACIONARIA</span>
+              <span id="crisis-val-inflacion" class="font-mono text-sm font-black text-red-400">50%</span>
+            </div>
+            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+              <div id="crisis-bar-inflacion" class="h-full bg-red-500 rounded-full transition-all duration-500" style="width: 50%"></div>
+            </div>
+          </div>
+
+          <!-- Variable 4: Logística -->
+          <div class="glass-panel p-3 rounded-xl border border-slate-800 bg-slate-950/60">
+            <div class="flex items-center justify-between text-xs mb-1.5">
+              <span class="text-slate-400 font-mono text-[11px]">FLUIDEZ LOGÍSTICA</span>
+              <span id="crisis-val-logistica" class="font-mono text-sm font-black text-emerald-400">50%</span>
+            </div>
+            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+              <div id="crisis-bar-logistica" class="h-full bg-emerald-400 rounded-full transition-all duration-500" style="width: 50%"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Dossier de Inteligencia: Contexto de la Crisis -->
+      <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+        <h4 class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+          <span>📋</span>
+          <span>SITREP • INFORME DE INTELIGENCIA DE LA SITUACIÓN</span>
+        </h4>
+        <p id="crisis-context-text" class="text-sm sm:text-base text-slate-200 leading-relaxed">
+          Cargando contexto geoestratégico del incidente...
+        </p>
+      </div>
+
+      <!-- Gabinete de Decisiones (3 Opciones) -->
+      <div>
+        <div class="mb-4">
+          <h4 class="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+            <span class="w-2.5 h-2.5 bg-orange-400 rounded-full animate-pulse"></span>
+            <span>CURSOS DE ACCIÓN DISPONIBLES • SELECCIONA UNA DOCTRINA</span>
+          </h4>
+          <span class="text-xs font-mono text-slate-400">Cada orden tendrá consecuencias asimétricas sobre la estabilidad mundial.</span>
+        </div>
+
+        <div id="crisis-decisions-container" class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <!-- Inyectado dinámicamente por worldcrisis.js -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ==================================================================== -->
+    <!-- VISTA 3: INFORME EJECUTIVO DE RESOLUCIÓN & EVALUACIÓN SISTÉMICA -->
+    <!-- ==================================================================== -->
+    <div id="crisis-results-view" class="hidden flex flex-col gap-6">
+      
+      <div class="hud-corner p-6 sm:p-8 rounded-2xl bg-[#090e1a]/95 border border-cyan-500/40 shadow-[0_0_50px_rgba(0,240,255,0.15)] flex flex-col gap-6">
+        
+        <!-- Cabecera del Informe -->
+        <div class="border-b border-slate-800 pb-5">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+            <span id="crisis-res-badge-alert" class="text-xs font-mono font-bold px-3 py-0.5 rounded border border-red-500/60 text-red-400 bg-red-950/40">
+              DEFCON 1
+            </span>
+            <span class="text-xs font-mono text-slate-400">INFORME DE EVALUACIÓN POST-CRISIS</span>
+          </div>
+          <h3 id="crisis-res-title" class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">
+            Resultado de la Intervención
+          </h3>
+          <div class="text-xs font-mono text-cyan-400">
+            DOCTRINA APLICADA: <span id="crisis-res-decision-doctrina" class="text-white font-bold">Opción A</span>
+          </div>
+          <div id="crisis-res-decision-titulo" class="text-sm text-slate-300 font-semibold mt-1">
+            Nombre de la orden ejecutada
+          </div>
+        </div>
+
+        <!-- Índice de Estabilidad Sistémica -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 bg-slate-950/70 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-5">
+            <div class="w-20 h-20 rounded-2xl bg-cyan-950/50 border border-cyan-500/50 flex flex-col items-center justify-center">
+              <span class="text-[10px] font-mono text-cyan-400 font-bold uppercase">ESTABILIDAD</span>
+              <span id="crisis-res-stability-score" class="text-2xl font-black text-white font-mono">84%</span>
+            </div>
+            <div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-1">VEREDICTO ESTRATÉGICO</div>
+              <div id="crisis-res-stability-badge" class="text-xs font-mono font-bold px-3 py-1 rounded border border-emerald-500/50 text-emerald-400 bg-emerald-950/40 w-fit">
+                RESOLUCIÓN TÁCTICA ÓPTIMA
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full sm:w-1/2 flex flex-col gap-2">
+            <div class="flex justify-between text-xs font-mono text-slate-400">
+              <span>Índice de Resiliencia Global</span>
+              <span>100% Óptimo</span>
+            </div>
+            <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+              <div id="crisis-res-stability-progress" class="h-full bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full transition-all duration-700" style="width: 84%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desglose de Impacto por Variables -->
+        <div>
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-3">
+            Variación Proyectada en Macromagnitudes:
+          </div>
+          <div id="crisis-res-impact-diffs" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <!-- Inyectado dinámicamente -->
+          </div>
+        </div>
+
+        <!-- Estado Final de las 4 Variables -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-4 border-t border-slate-800/80">
+          <div class="glass-panel p-3 rounded-xl border border-slate-800">
+            <div class="flex justify-between text-[11px] font-mono text-slate-400 mb-1">
+              <span>Comercio Final</span>
+              <span id="crisis-end-val-comercio" class="text-cyan-400 font-bold">60%</span>
+            </div>
+            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+              <div id="crisis-end-bar-comercio" class="h-full bg-cyan-400 rounded-full" style="width: 60%"></div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-3 rounded-xl border border-slate-800">
+            <div class="flex justify-between text-[11px] font-mono text-slate-400 mb-1">
+              <span>Energía Final</span>
+              <span id="crisis-end-val-energia" class="text-amber-400 font-bold">65%</span>
+            </div>
+            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+              <div id="crisis-end-bar-energia" class="h-full bg-amber-400 rounded-full" style="width: 65%"></div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-3 rounded-xl border border-slate-800">
+            <div class="flex justify-between text-[11px] font-mono text-slate-400 mb-1">
+              <span>Inflación Final</span>
+              <span id="crisis-end-val-inflacion" class="text-red-400 font-bold">55%</span>
+            </div>
+            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+              <div id="crisis-end-bar-inflacion" class="h-full bg-red-400 rounded-full" style="width: 55%"></div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-3 rounded-xl border border-slate-800">
+            <div class="flex justify-between text-[11px] font-mono text-slate-400 mb-1">
+              <span>Logística Final</span>
+              <span id="crisis-end-val-logistica" class="text-emerald-400 font-bold">65%</span>
+            </div>
+            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+              <div id="crisis-end-bar-logistica" class="h-full bg-emerald-400 rounded-full" style="width: 65%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consecuencias y Análisis Narrativo -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col gap-3">
+          <h4 class="text-xs font-mono font-bold text-orange-400 uppercase tracking-wider flex items-center gap-2">
+            <span>🔍</span>
+            <span>DEBRIEFING OPERACIONAL • CONSECUENCIAS DIRECTAS E INDIRECTAS</span>
+          </h4>
+          <p id="crisis-res-narrative" class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            Narrativa de consecuencias de la decisión tomada...
+          </p>
+          <div id="crisis-res-summary-quote" class="text-xs font-mono text-cyan-300 italic p-3 rounded-xl bg-cyan-950/20 border border-cyan-500/20 mt-2">
+            "Resumen ejecutivo del impacto táctico."
+          </div>
+        </div>
+
+        <!-- Nota Educativa Obligatoria -->
+        <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-[11px] text-slate-400 flex items-center gap-3">
+          <span class="text-amber-400 text-lg">💡</span>
+          <span>
+            <strong class="text-slate-200">Aviso didáctico:</strong> Este simulador es una herramienta educativa interactiva de prospección macroeconómica. Los escenarios y consecuencias modelados son didácticos y no constituyen predicciones del mundo real.
+          </span>
+        </div>
+
+        <!-- Botones de Acción de Fin de Crisis -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-800">
+          <button id="btn-crisis-retry-decision" class="btn-tactical btn-orange py-3 px-5 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+            <span>↺</span>
+            <span>PROBAR OTRA DECISIÓN</span>
+          </button>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <button id="btn-crisis-return-selector" class="btn-tactical btn-cyan py-3 px-4 text-xs font-bold uppercase tracking-wider">
+              <span>LISTA DE ESCENARIOS</span>
+            </button>
+            <button id="btn-crisis-next" class="btn-tactical btn-cyan py-3 px-6 text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-cyan-500/20">
+              <span>SIGUIENTE CRISIS</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ====================================================================== -->
+  <!-- MODO 4: DESAFÍO DIARIO (PANTALLA DE JUEGO) -->
+  <!-- ====================================================================== -->
+  <section id="daily-challenge-screen" class="hidden flex-1 max-w-4xl w-full mx-auto px-4 sm:px-8 py-8 flex flex-col gap-6 relative z-10">
+    
+    <!-- Barra Superior -->
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+      <div class="flex items-center gap-3">
+        <button id="btn-back-home-from-daily" class="btn-tactical btn-cyan py-2 px-3 text-xs flex items-center gap-2">
+          <span>←</span>
+          <span>SALA DE MANDO</span>
+        </button>
+        <div>
+          <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+            <span class="text-orange-400">📅</span>
+            <span>DESAFÍO DIARIO</span>
+          </h2>
+          <div id="daily-today-date" class="text-[11px] font-mono text-orange-400">CALIBRANDO FECHA...</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="glass-panel px-3 py-1.5 rounded-lg border border-slate-800 text-xs font-mono">
+          <span class="text-slate-400">RACHA: </span>
+          <span id="daily-streak-val" class="font-bold text-orange-400">0x</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gameplay Area -->
+    <div id="daily-gameplay-area" class="flex flex-col gap-6">
+      
+      <!-- HUD Táctico -->
+      <div class="glass-panel p-4 rounded-xl border border-slate-800 flex items-center justify-between gap-4">
+        <div id="daily-q-counter" class="text-xs font-mono font-bold text-cyan-400">
+          PREGUNTA 1 DE 5
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-1.5 font-mono text-xs">
+            <span class="text-slate-400">TIEMPO:</span>
+            <span id="daily-timer-val" class="text-amber-400 font-bold">25s</span>
+          </div>
+          <div class="flex items-center gap-1.5 font-mono text-xs">
+            <span class="text-slate-400">PUNTOS:</span>
+            <span id="daily-score-val" class="text-white font-bold">0 PTS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Progreso -->
+      <div class="w-full h-1.5 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+        <div id="daily-progress-bar" class="h-full bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-300" style="width: 0%"></div>
+      </div>
+
+      <!-- Pregunta -->
+      <div class="hud-corner p-6 sm:p-8 rounded-2xl bg-[#090e1a]/95 border border-orange-500/40 shadow-[0_0_40px_rgba(255,107,0,0.15)] flex flex-col gap-6">
+        <div>
+          <span id="daily-cat-badge" class="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-orange-500/10 border border-orange-500/30 text-orange-400 mb-3 inline-block">
+            CATEGORÍA
+          </span>
+          <h3 id="daily-q-text" class="text-lg sm:text-xl font-extrabold text-white leading-snug">
+            Cargando pregunta del desafío diario...
+          </h3>
+        </div>
+
+        <!-- Opciones -->
+        <div id="daily-options-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <!-- Inyectado por daily_challenge.js -->
+        </div>
+
+        <!-- Retroalimentación -->
+        <div id="daily-feedback-box" class="hidden">
+          <div id="daily-feedback-title" class="font-bold text-sm mb-1"></div>
+          <p id="daily-feedback-text" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+        </div>
+
+        <!-- Botón Siguiente -->
+        <div class="flex justify-end">
+          <button id="daily-btn-next-q" class="hidden btn-tactical btn-orange py-3 px-6 text-xs font-bold uppercase tracking-wider">
+            SIGUIENTE PREGUNTA →
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Resultados del Desafío Diario -->
+    <div id="daily-results-card" class="hidden hud-corner p-8 rounded-2xl bg-[#090e1a]/95 border border-orange-500/50 shadow-[0_0_50px_rgba(255,107,0,0.2)] text-center flex flex-col items-center gap-6">
+      <div class="w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/40 flex items-center justify-center text-3xl">
+        🎉
+      </div>
+
+      <div>
+        <span id="daily-day-streak-badge" class="text-xs font-mono font-bold px-3 py-1 rounded bg-orange-500/20 text-orange-400 border border-orange-500/40 uppercase mb-2 inline-block">
+          🔥 RACHA DIARIA: 1 DÍA
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+          ¡DESAFÍO DIARIO COMPLETADO!
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300 mt-1">
+          Has completado la misión diaria de inteligencia. Se han sumado +300 XP de bonificación a tu expediente.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full max-w-lg">
+        <div class="glass-panel p-3 rounded-xl border border-slate-800">
+          <div class="text-[10px] font-mono text-slate-400">PUNTUACIÓN</div>
+          <div id="daily-final-score" class="text-lg font-black text-orange-400 font-mono mt-0.5">0 PTS</div>
+        </div>
+        <div class="glass-panel p-3 rounded-xl border border-slate-800">
+          <div class="text-[10px] font-mono text-slate-400">ACIERTOS</div>
+          <div id="daily-final-correct" class="text-lg font-black text-white font-mono mt-0.5">0 / 5</div>
+        </div>
+        <div class="glass-panel p-3 rounded-xl border border-slate-800 col-span-2 sm:col-span-1">
+          <div class="text-[10px] font-mono text-slate-400">MEJOR RACHA</div>
+          <div id="daily-final-streak-bonus" class="text-xs font-mono font-bold text-cyan-400 mt-1">0x</div>
+        </div>
+      </div>
+
+      <button id="daily-btn-exit" class="btn-tactical btn-cyan py-3.5 px-8 text-xs font-bold uppercase tracking-wider">
+        VOLVER A LA SALA DE MANDO
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ====================================================================== -->
+  <!-- PIE DE PÁGINA TÁCTICO -->
+  <!-- ====================================================================== -->
+  <footer class="border-t border-slate-800/80 bg-[#03060d] py-6 px-4 sm:px-8 mt-12 text-xs text-slate-500 font-mono">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 text-slate-400">
+        <span class="text-cyan-400 font-bold">WORLD CHAOS</span> • Simulador Didáctico de Geopolítica & Logística
+      </div>
+      <div>
+        100% Local • Sin Bases de Datos • Récords en localStorage
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================== -->
+  <!-- MODAL: SELECTOR DE DIFICULTAD GEOQUIZ -->
+  <!-- ====================================================================== -->
+  <div id="modal-quiz-difficulty" class="modal-backdrop hidden">
+    <div class="modal-card p-6 sm:p-8 max-w-xl">
+      <div class="flex items-center justify-between border-b border-cyan-500/30 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-cyan-400 font-bold text-xl">
+            ⚡
+          </div>
+          <div>
+            <h3 class="text-xl font-black text-white uppercase tracking-wider">GEOQUIZ • DESPLIEGUE</h3>
+            <p class="text-xs font-mono text-cyan-400">Selecciona el Nivel de Amenaza</p>
+          </div>
+        </div>
+        <button onclick="document.getElementById('modal-quiz-difficulty').classList.add('hidden')" class="text-slate-400 hover:text-white p-2">✕</button>
+      </div>
+
+      <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
+        Cada partida consta de <strong class="text-white">7 preguntas tácticas</strong> seleccionadas al azar sin repeticiones. Responde con rapidez para acumular multiplicadores de racha y batir tu récord personal.
+      </p>
+
+      <div class="space-y-3 mb-6">
+        <!-- Nivel Fácil -->
+        <button data-diff="facil" class="btn-select-diff group w-full p-4 rounded-xl text-left border border-cyan-500/30 bg-slate-900/80 hover:bg-slate-850 hover:border-cyan-400 transition flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-bold text-white group-hover:text-cyan-400">NIVEL 1: FÁCIL</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">100 PTS BASE</span>
+            </div>
+            <p class="text-xs text-slate-400 mt-1">Conceptos fundamentales de canales, puertos, litio y comercio global.</p>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-cyan-400 transition"></i>
+        </button>
+
+        <!-- Nivel Intermedio -->
+        <button data-diff="medio" class="btn-select-diff group w-full p-4 rounded-xl text-left border border-orange-500/30 bg-slate-900/80 hover:bg-slate-850 hover:border-orange-400 transition flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-bold text-white group-hover:text-orange-400">NIVEL 2: INTERMEDIO</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-orange-950 text-orange-400 border border-orange-800">200 PTS BASE</span>
+            </div>
+            <p class="text-xs text-slate-400 mt-1">Cuellos de botella, sanciones SWIFT, ASML/semiconductores y Flota Fantasma.</p>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-orange-400 transition"></i>
+        </button>
+
+        <!-- Nivel Experto -->
+        <button data-diff="experto" class="btn-select-diff group w-full p-4 rounded-xl text-left border border-red-500/30 bg-slate-900/80 hover:bg-slate-850 hover:border-red-400 transition flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-bold text-white group-hover:text-red-400">NIVEL 3: EXPERTO</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-red-950 text-red-400 border border-red-800">350 PTS BASE</span>
+            </div>
+            <p class="text-xs text-slate-400 mt-1">Calados Neopanamax, diplomacia profunda, tierras raras pesadas e Incoterms.</p>
+          </div>
+          <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:text-red-400 transition"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- MODAL: MANUAL E INSTRUCCIONES -->
+  <!-- ====================================================================== -->
+  <div id="modal-instructions" class="modal-backdrop hidden">
+    <div class="modal-card p-6 sm:p-8">
+      <div class="flex items-center justify-between border-b border-cyan-500/30 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-cyan-400 font-bold">
+            📖
+          </div>
+          <div>
+            <h3 class="text-lg font-black text-white uppercase tracking-wider">Manual de Operaciones</h3>
+            <p class="text-xs font-mono text-cyan-400">Directrices para la Gestión del Caos Mundial</p>
+          </div>
+        </div>
+        <button id="btn-close-instructions" class="text-slate-400 hover:text-white p-2">✕</button>
+      </div>
+
+      <div class="space-y-6 text-sm text-slate-300">
+        <div>
+          <h4 class="text-cyan-300 font-bold mb-1 flex items-center gap-2">
+            <span class="text-orange-400">01.</span> ¿Qué es WORLD CHAOS?
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Es una plataforma de juego y análisis interactivo que simula las tensiones geoeconómicas reales que mueven el planeta: estrechos marítimos, materias primas críticas y cadenas de suministro globales.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-cyan-300 font-bold mb-2 flex items-center gap-2">
+            <span class="text-orange-400">02.</span> Los 3 Modos Operativos
+          </h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+              <strong class="text-cyan-400">GEOQUIZ:</strong> Contesta preguntas antes de que expire el tiempo. Cada acierto consecutivo eleva tu rango de analista.
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+              <strong class="text-orange-400">GEOBATTLE:</strong> Combate estratégico de bloques donde cada decisión abre o estrangula las rutas de tus oponentes.
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800">
+              <strong class="text-red-400">WORLD CRISIS:</strong> Eres el jefe de crisis mundial. Te enfrentas a catástrofes logísticas aleatorias y debes equilibrar fletes y reservas.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-cyan-300 font-bold mb-1 flex items-center gap-2">
+            <span class="text-orange-400">03.</span> Récords y Privacidad
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Todas tus puntuaciones, títulos y medallas se guardan exclusivamente en la memoria local de tu navegador (<code class="text-cyan-300 font-mono">localStorage</code>). No se recopilan datos privados ni se transmiten a servidores externos.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="document.getElementById('modal-instructions').classList.add('hidden')" class="btn-tactical btn-cyan py-2.5 px-6 text-xs">
+          ENTENDIDO, VOLVER AL MANDO
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- MODAL: EXPEDIENTE Y RÉCORDS PERSONALES -->
+  <!-- ====================================================================== -->
+  <div id="modal-records" class="modal-backdrop hidden">
+    <div class="modal-card p-6 sm:p-8">
+      <div class="flex items-center justify-between border-b border-orange-500/30 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/40 flex items-center justify-center text-orange-400 font-bold">
+            🎖️
+          </div>
+          <div>
+            <h3 class="text-lg font-black text-white uppercase tracking-wider">Expediente del Operador</h3>
+            <p class="text-xs font-mono text-orange-400">Historial de Servicio y Récords Tácticos</p>
+          </div>
+        </div>
+        <button id="btn-close-records" class="text-slate-400 hover:text-white p-2">✕</button>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Tarjeta de Identificación -->
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-cyan-500/40 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="text-[10px] font-mono text-cyan-400 uppercase">IDENTIFICADOR OFICIAL</div>
+            <div class="text-xl font-black text-white tracking-wider flex items-center gap-2">
+              <span id="modal-codename">OPERADOR_DELTA</span>
+              <button id="btn-edit-codename" class="text-xs text-slate-400 hover:text-cyan-400 underline font-normal">(editar)</button>
+            </div>
+          </div>
+          <button id="btn-reset-records" class="btn-tactical btn-outline text-red-400 hover:border-red-500 text-[11px] py-1.5 px-3">
+            REINICIAR RÉCORDS
+          </button>
+        </div>
+
+        <!-- Tabla de Récords por Modo -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+            <div class="text-[10px] font-mono text-slate-400">RÉCORD GEOQUIZ</div>
+            <div id="rec-quiz-score" class="text-lg font-black text-cyan-400 font-mono mt-1">0</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+            <div class="text-[10px] font-mono text-slate-400">QUIZ JUGADOS</div>
+            <div id="rec-quiz-games" class="text-lg font-black text-white font-mono mt-1">0</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+            <div class="text-[10px] font-mono text-slate-400">VICTORIAS BATTLE</div>
+            <div id="rec-battle-wins" class="text-lg font-black text-orange-400 font-mono mt-1">0</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 border border-slate-800">
+            <div class="text-[10px] font-mono text-slate-400">CRISIS EVITADAS</div>
+            <div id="rec-crisis-averted" class="text-lg font-black text-emerald-400 font-mono mt-1">0</div>
+          </div>
+        </div>
+
+        <!-- Condecoraciones -->
+        <div>
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Condecoraciones & Medallas</div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+            <div class="p-2.5 rounded-lg bg-slate-900 border border-cyan-500/30 flex items-center gap-2.5">
+              <span class="text-xl">🛡️</span>
+              <div>
+                <div class="font-bold text-white">Credencial NORAD</div>
+                <div class="text-[10px] text-slate-400">Acceso inicial autorizado</div>
+              </div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 opacity-50 flex items-center gap-2.5">
+              <span class="text-xl">🛰️</span>
+              <div>
+                <div class="font-bold text-slate-400">Ojo Satelital</div>
+                <div class="text-[10px] text-slate-500">Bloqueado</div>
+              </div>
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 opacity-50 flex items-center gap-2.5">
+              <span class="text-xl">⚓</span>
+              <div>
+                <div class="font-bold text-slate-400">Señor del Pacífico</div>
+                <div class="text-[10px] text-slate-500">Bloqueado</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="document.getElementById('modal-records').classList.add('hidden')" class="btn-tactical btn-orange py-2.5 px-6 text-xs">
+          CERRAR EXPEDIENTE
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- MODAL: BRIEFING TÁCTICO DE MODO DE JUEGO (PREVIEW WORLD CRISIS) -->
+  <!-- ====================================================================== -->
+  <div id="modal-mode-briefing" class="modal-backdrop hidden">
+    <div class="modal-card p-6 sm:p-8 border-orange-500">
+      <div class="flex items-center justify-between border-b border-orange-500/30 pb-4 mb-6">
+        <div>
+          <span id="briefing-tag" class="text-[11px] font-mono text-orange-400 font-bold uppercase tracking-wider">MODO 03</span>
+          <h3 id="briefing-title" class="text-xl font-black text-white tracking-wide">TÍTULO DEL MODO</h3>
+        </div>
+        <button id="btn-close-briefing" class="text-slate-400 hover:text-white p-2">✕</button>
+      </div>
+
+      <div class="space-y-5 text-sm text-slate-300">
+        <p id="briefing-desc" class="text-slate-300 leading-relaxed"></p>
+
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2 text-xs font-mono">
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span class="text-slate-400">OBJETIVO PRIMARIO:</span>
+            <span id="briefing-objective" class="text-white font-bold text-right max-w-xs"></span>
+          </div>
+          <div class="flex justify-between border-b border-slate-800 pb-2">
+            <span class="text-slate-400">NIVEL DE AMENAZA:</span>
+            <span id="briefing-difficulty" class="text-orange-400 font-bold"></span>
+          </div>
+          <div class="flex justify-between pt-1">
+            <span class="text-slate-400">ESTADO DEL MÓDULO:</span>
+            <span id="briefing-status" class="text-cyan-400 font-bold"></span>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-lg bg-orange-500/10 border border-orange-500/30 text-xs text-orange-300 flex items-center gap-2">
+          <i data-lucide="info" class="w-4 h-4 shrink-0 text-orange-400"></i>
+          <span>La estructura principal está verificada y operativa. La lógica de World Crisis se activará en la siguiente fase.</span>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="document.getElementById('modal-mode-briefing').classList.add('hidden')" class="btn-tactical btn-cyan py-2.5 px-6 text-xs">
+          ENTENDIDO, VOLVER A LA SALA DE MANDO
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- MODAL: EXPEDIENTE LOCAL Y PERFIL DE AGENTE (SIN REGISTRO) -->
+  <!-- ====================================================================== -->
+  <div id="modal-profile" class="modal-backdrop hidden">
+    <div class="modal-card p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+      
+      <!-- Cabecera del Perfil -->
+      <div class="flex items-center justify-between border-b border-cyan-500/30 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center text-xl text-cyan-400 font-bold">
+            👤
+          </div>
+          <div>
+            <h3 class="text-lg sm:text-xl font-black text-white uppercase tracking-wider">Perfil Local de Inteligencia</h3>
+            <p class="text-xs font-mono text-cyan-400">Expediente Táctico Almacenado en Navegador (localStorage)</p>
+          </div>
+        </div>
+        <button id="btn-close-profile" class="text-slate-400 hover:text-white p-2 text-sm font-bold">✕</button>
+      </div>
+
+      <div class="space-y-6">
+        
+        <!-- Identificador & Nivel -->
+        <div class="glass-panel p-5 rounded-2xl border border-cyan-500/30 bg-gradient-to-r from-cyan-950/30 via-slate-900 to-slate-950 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+          <div class="flex-1 w-full">
+            <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1">INDICATIVO DEL AGENTE</div>
+            <div class="flex items-center gap-2">
+              <input id="profile-input-codename" type="text" maxlength="16" class="px-3 py-1.5 rounded-lg bg-slate-950 border border-cyan-500/50 text-white font-mono font-bold text-sm uppercase focus:outline-none focus:border-cyan-400 w-48" value="OPERADOR_DELTA">
+              <button id="profile-btn-save-codename" class="btn-tactical btn-cyan py-1.5 px-3 text-xs">GUARDAR</button>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-start sm:items-end w-full sm:w-auto">
+            <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1">RANGO SISTÉMICO</div>
+            <div class="flex items-center gap-3">
+              <span id="profile-level-badge" class="text-xs font-mono font-bold px-3 py-1 rounded border border-cyan-500 text-cyan-400 bg-cyan-950/60 shadow-sm">
+                PRINCIPIANTE
+              </span>
+              <span id="profile-total-xp" class="text-base font-mono font-black text-orange-400">0 XP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barra de Progreso al Siguiente Nivel -->
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 space-y-2">
+          <div class="flex justify-between text-xs font-mono">
+            <span class="text-slate-400">PROGRESIÓN DE NIVEL:</span>
+            <span id="profile-next-level-info" class="text-cyan-400 font-bold">0 / 1.000 XP para Analista</span>
+          </div>
+          <div class="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden border border-slate-800">
+            <div id="profile-level-progress-bar" class="h-full bg-gradient-to-r from-cyan-400 via-sky-400 to-orange-400 rounded-full transition-all duration-500" style="width: 0%"></div>
+          </div>
+          <div class="grid grid-cols-4 text-[10px] font-mono text-slate-500 text-center pt-1">
+            <span>Principiante</span>
+            <span>Analista (1k)</span>
+            <span>Estratega (3.5k)</span>
+            <span>Experto (8k+)</span>
+          </div>
+        </div>
+
+        <!-- Vitrina de Medallas y Condecoraciones (12 Logros) -->
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <span class="text-amber-400">🎖️</span>
+              <span>VITRINA DE MEDALLAS & CONDECORACIONES</span>
+            </h4>
+            <span id="profile-medals-unlocked-count" class="text-xs font-mono text-amber-400 font-bold">0 / 12 Desbloqueadas</span>
+          </div>
+
+          <div id="profile-medals-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Inyectado dinámicamente por profile.js -->
+          </div>
+        </div>
+
+        <!-- Cuadrícula de Estadísticas Globales -->
+        <div>
+          <h4 class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-3">
+            REGISTRO TÁCTICO POR MODOS DE JUEGO
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+            
+            <div class="glass-panel p-3 rounded-xl border border-slate-800">
+              <div class="text-[9px] font-mono text-slate-400 uppercase">GEOQUIZ HIGH</div>
+              <div id="profile-stat-quiz-high" class="text-sm sm:text-base font-black text-cyan-400 font-mono mt-0.5">0 PTS</div>
+              <div class="text-[10px] font-mono text-slate-500 mt-1">Partidas: <span id="profile-stat-quiz-played">0</span></div>
+            </div>
+
+            <div class="glass-panel p-3 rounded-xl border border-slate-800">
+              <div class="text-[9px] font-mono text-slate-400 uppercase">GEOBATTLE WINS</div>
+              <div id="profile-stat-battle-wins" class="text-sm sm:text-base font-black text-orange-400 font-mono mt-0.5">0</div>
+              <div class="text-[10px] font-mono text-slate-500 mt-1">Jugadas: <span id="profile-stat-battle-played">0</span></div>
+            </div>
+
+            <div class="glass-panel p-3 rounded-xl border border-slate-800">
+              <div class="text-[9px] font-mono text-slate-400 uppercase">CRISIS RESUELTAS</div>
+              <div id="profile-stat-crisis-averted" class="text-sm sm:text-base font-black text-emerald-400 font-mono mt-0.5">0</div>
+              <div class="text-[10px] font-mono text-slate-500 mt-1">Máx: <span id="profile-stat-crisis-stability">0%</span></div>
+            </div>
+
+            <div class="glass-panel p-3 rounded-xl border border-slate-800">
+              <div class="text-[9px] font-mono text-slate-400 uppercase">DESAFÍOS DIARIOS</div>
+              <div id="profile-stat-daily-played" class="text-sm sm:text-base font-black text-amber-400 font-mono mt-0.5">0</div>
+              <div class="text-[10px] font-mono text-slate-500 mt-1">Racha: <span id="profile-stat-daily-streak">0 d</span></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Precisión y Rachas -->
+        <div class="glass-panel p-3.5 rounded-xl border border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+          <div class="flex items-center gap-2">
+            <span class="text-slate-400">PRECISIÓN GLOBAL DE RESPUESTAS:</span>
+            <span id="profile-stat-global-accuracy" class="text-emerald-400 font-bold">0% (0/0)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-slate-400">MEJOR RACHA DE QUIZ:</span>
+            <span id="profile-stat-quiz-streak" class="text-cyan-400 font-bold">0x</span>
+          </div>
+        </div>
+
+        <!-- Zona de Peligro -->
+        <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <button id="profile-btn-reset" class="text-xs font-mono text-red-400 hover:text-red-300 transition flex items-center gap-1.5">
+            <span>⚠️</span>
+            <span>Reiniciar datos y medallas locales</span>
+          </button>
+          <button onclick="document.getElementById('modal-profile').classList.add('hidden')" class="btn-tactical btn-cyan py-2.5 px-6 text-xs">
+            CERRAR PERFIL
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- BANNER FLOTANTE CELEBRATORIO DE MEDALLA / ASCENSO -->
+  <!-- ====================================================================== -->
+  <div id="medal-unlock-banner" class="fixed top-6 right-6 z-50 hidden max-w-sm w-full">
+    <div class="hud-corner p-4 rounded-2xl bg-[#090e1a]/95 border-2 border-amber-400 shadow-[0_0_40px_rgba(251,191,36,0.35)] flex items-start gap-4 backdrop-blur-md">
+      <div id="medal-banner-icon" class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-400/50 flex items-center justify-center text-3xl shrink-0">
+        🎖️
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider flex items-center justify-between">
+          <span>¡NUEVO LOGRO DESBLOQUEADO!</span>
+          <button id="medal-banner-dismiss" class="text-slate-400 hover:text-white">✕</button>
+        </div>
+        <h4 id="medal-banner-name" class="text-sm font-black text-white truncate mt-0.5">Nombre de la Medalla</h4>
+        <p id="medal-banner-desc" class="text-xs text-slate-300 line-clamp-2 mt-1">Descripción del logro conseguido.</p>
+        <div class="text-[10px] font-mono text-emerald-400 font-bold mt-1.5">+500 XP BONIFICACIÓN</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/globe.js"></script>
+  <script src="js/quiz_questions.js"></script>
+  <script src="js/geoquiz.js"></script>
+  <script src="js/battle_countries.js"></script>
+  <script src="js/geobattle.js"></script>
+  <script src="js/crisis_scenarios.js"></script>
+  <script src="js/worldcrisis.js"></script>
+  <script src="js/daily_challenge.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Inicializar iconos Lucide
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
